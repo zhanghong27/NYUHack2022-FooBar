@@ -17,7 +17,7 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
   const theme = useTheme()
 
   return (
-    <Card>
+    <Card variant='outlined' square>
       <CardHeader
         title={doctor.name}
         avatar={

@@ -19,7 +19,7 @@ const PrescriptionList = () => {
   return (
     <>
       {data.map((prescription) => (
-        <Card key={prescription.name}>
+        <Card key={prescription.name} variant='outlined' square>
           <CardContent>
             <Typography variant='h4' color={theme.palette.primary.dark}>
               {prescription.name}

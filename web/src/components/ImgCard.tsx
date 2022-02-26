@@ -17,14 +17,14 @@ export type ImgCardProps = WithChildren<{
 
 const ImgCard = ({ children, img, to }: ImgCardProps) => {
   return (
-    <Card>
+    <Card square variant='outlined'>
       <CardActionArea component={Link} to={to}>
         <Grid container>
           <Grid item xs={2} sm={12}>
             <CardMedia component='img' image={img} />
           </Grid>
           <Grid item xs={10} sm={12}>
-            <Box sx={{ minHeight: '7vw' }}>
+            <Box sx={{ minHeight: '20px' }}>
               {children && <CardActions>{children}</CardActions>}
             </Box>
           </Grid>
