@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Button,
-  CardActionArea,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-} from '@mui/material'
+import { CardActionArea, Card, CardActions, CardMedia } from '@mui/material'
 import { WithChildren } from '../types'
 import { Link } from 'react-router-dom'
 

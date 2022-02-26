@@ -1,9 +1,17 @@
 import React from 'react'
-import { Card, CardContent, Typography } from '@mui/material'
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+  useTheme,
+} from '@mui/material'
 import { useQuery } from 'react-query'
 import { getPrescriptions } from '../../api/prescriptions'
 
 const PrescriptionList = () => {
+  const theme = useTheme()
   const { data, isLoading } = useQuery('prescriptions', getPrescriptions)
 
   if (isLoading || data === undefined) return <>loading</>
@@ -11,20 +19,20 @@ const PrescriptionList = () => {
   return (
     <>
       {data.map((prescription) => (
-        <Card
-          key={prescription.name}
-          sx={{
-            width: '20vw',
-          }}
-        >
+        <Card key={prescription.name}>
           <CardContent>
-            <Typography variant="h4" color="primary">
+            <Typography variant="h4" color={theme.palette.primary.dark}>
               {prescription.name}
             </Typography>
-            <Typography variant="body1" color="secondary">
+            <Typography variant="body1" color={theme.palette.secondary.main}>
               {prescription.instruction}
             </Typography>
           </CardContent>
+          <CardActions>
+            <Button>
+              <Typography variant="button">Find Shop</Typography>
+            </Button>
+          </CardActions>
         </Card>
       ))}
     </>
