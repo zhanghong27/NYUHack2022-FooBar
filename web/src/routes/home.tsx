@@ -15,18 +15,20 @@ import ImgCard from '../components/ImgCard'
 const Home = () => {
   return (
     <Container>
-      <Container sx={{
-        marginTop: '1rem',
-        marginBottom: '1rem',
-      }}>
+      <Container
+        sx={{
+          marginTop: '1rem',
+          marginBottom: '1rem',
+        }}
+      >
         <Grid item xs={12}>
-          <Typography color='primary' variant='h1'>
+          <Typography color="primary" variant="h1">
             Anywhere, Any Healthcare
           </Typography>
         </Grid>
 
         <Grid item xs={12}>
-          <Typography color='secondary' variant='caption'>
+          <Typography color="secondary" variant="caption">
             Your Appointment Starts Here
           </Typography>
         </Grid>
@@ -36,25 +38,25 @@ const Home = () => {
         <Grid item xs={1}></Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={doctor} to='/home'>
-              <BookIcon color='primary' />
-              <Typography variant='button'>Make an Appointment</Typography>
+            <ImgCard img={doctor} to="/home">
+              <BookIcon color="primary" />
+              <Typography variant="button">Make an Appointment</Typography>
             </ImgCard>
           </ShadowBox>
         </Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={pills} to='/home'>
-              <MedicationIcon color='primary' />
-              <Typography variant='button'>Prescriptions</Typography>
+            <ImgCard img={pills} to="/home">
+              <MedicationIcon color="primary" />
+              <Typography variant="button">Prescriptions</Typography>
             </ImgCard>
           </ShadowBox>
         </Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={appointments} to='/home'>
-              <EventNoteIcon color='primary' />
-              <Typography variant='button'>Upcoming Appointments</Typography>
+            <ImgCard img={appointments} to="/home">
+              <EventNoteIcon color="primary" />
+              <Typography variant="button">Upcoming Appointments</Typography>
             </ImgCard>
           </ShadowBox>
         </Grid>
