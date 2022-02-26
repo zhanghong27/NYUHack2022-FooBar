@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "prettier -c ./src",
+    "lint": "prettier -c ./src && eslint ./src",
     "format": "prettier -w ./src"
   },
   "eslintConfig": {
@@ -48,7 +48,10 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.10.0",
+    "eslint-plugin-react": "^7.29.1",
     "prettier": "^2.5.1"
   }
 }
