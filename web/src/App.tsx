@@ -1,6 +1,6 @@
 import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material'
-import Routes from './routes/router'
+import Routes from './routes/Router'
 
 const theme = createTheme({
   palette: {
