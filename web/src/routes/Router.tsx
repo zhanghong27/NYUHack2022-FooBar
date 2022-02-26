@@ -2,9 +2,10 @@ import React from 'react'
 import Home from './Home'
 import Prescriptions from './Prescriptions'
 import { Navigate, Route, Routes } from 'react-router'
+import Login from '../Auth/Login'
+import Signup from '../Auth/Signup'
 import ListAppointments from './Appointment/New/List'
 import NewAppointmentConfirm from './Appointment/New/Confirm'
-import AppointmentVideoChat from './Appointment/VideoChat'
 import NotFound from './NotFound'
 
 const PageRoutes = () => {
@@ -17,8 +18,9 @@ const PageRoutes = () => {
           <Route path='list' element={<ListAppointments />} />
           <Route path='confirm' element={<NewAppointmentConfirm />} />
         </Route>
-        <Route path='video' element={<AppointmentVideoChat />} />
       </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path='/' element={<Navigate to='/home' />} />
       <Route path='*' element={<NotFound />}></Route>
     </Routes>

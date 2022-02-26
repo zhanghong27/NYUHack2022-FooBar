@@ -2,6 +2,7 @@ import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material'
 import Routes from './routes/Router'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import Navbar from './Navbar/Navbar'
 
 const theme = createTheme({
   palette: {
@@ -35,6 +36,7 @@ function App() {
     <div>
       <QueryClientProvider client={client}>
         <ThemeProvider theme={theme}>
+          <Navbar />
           <Routes />
         </ThemeProvider>
       </QueryClientProvider>
