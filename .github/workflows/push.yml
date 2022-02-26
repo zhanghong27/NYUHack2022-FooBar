@@ -19,4 +19,5 @@ jobs:
         run: npm test
       
       - name: Run lint
+        working-directory: web
         run: npm run lint
