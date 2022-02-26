@@ -1,7 +1,7 @@
 import Home from './home';
 import {Navigate, Route, Routes} from 'react-router';
 
-let PageRoutes = () => {
+const PageRoutes = () => {
     return (
         <Routes>
             <Route path='/home' element={<Home />} />
