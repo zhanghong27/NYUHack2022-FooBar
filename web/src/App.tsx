@@ -1,6 +1,7 @@
 import React from 'react'
 import { createTheme, ThemeProvider } from '@mui/material'
 import Routes from './routes/Router'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 const theme = createTheme({
   palette: {
@@ -18,15 +19,25 @@ const theme = createTheme({
     h2: {
       fontSize: '1.2rem',
     },
+    h3: {
+      fontSize: '1.2rem',
+    },
+    h4: {
+      fontSize: '1rem',
+    },
   },
 })
+
+const client = new QueryClient()
 
 function App() {
   return (
     <div>
-      <ThemeProvider theme={theme}>
-        <Routes />
-      </ThemeProvider>
+      <QueryClientProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <Routes />
+        </ThemeProvider>
+      </QueryClientProvider>
     </div>
   )
 }

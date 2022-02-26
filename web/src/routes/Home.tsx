@@ -46,7 +46,7 @@ const Home = () => {
         </Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={pills} to="/home">
+            <ImgCard img={pills} to="/prescriptions">
               <MedicationIcon color="primary" />
               <Typography variant="button">Prescriptions</Typography>
             </ImgCard>
