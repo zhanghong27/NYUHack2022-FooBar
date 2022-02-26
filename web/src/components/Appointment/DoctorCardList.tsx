@@ -9,7 +9,14 @@ type DoctorCardListProps = {
 
 const DoctorCardList = ({ doctors }: DoctorCardListProps) => {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        '& > :not(style)': {
+          m: 1,
+        },
+      }}
+    >
       {doctors.map((doctor) => (
         <DoctorCard key={doctor.id} doctor={doctor} />
       ))}

@@ -3,7 +3,6 @@ import BookIcon from '@mui/icons-material/Book'
 import MedicationIcon from '@mui/icons-material/Medication'
 import EventNoteIcon from '@mui/icons-material/EventNote'
 import { Grid, Typography } from '@mui/material'
-import ShadowBox from '../components/ShadowBox'
 // https://pixabay.com/photos/doctor-gray-hair-experience-2337835/
 import doctor from '../static/doctor.jpg'
 // https://pixabay.com/photos/pills-drugs-medicines-tablets-dose-6826554/
@@ -14,38 +13,43 @@ import ImgCard from '../components/ImgCard'
 import TitlePage from '../layout/TitlePage'
 
 const Home = () => {
+  const fontSize = {
+    sm: '0.6rem',
+    md: '0.8rem',
+  }
+
   return (
     <TitlePage
       title='Anywhere, Any Healthcare'
       subTitle='Your First Appointment Starts Here'
     >
       <Grid container spacing={4}>
-        <Grid item xs={1}></Grid>
-        <Grid item xs={3}>
-          <ShadowBox>
-            <ImgCard img={doctor} to='/appointment/new/list'>
-              <BookIcon color='primary' />
-              <Typography variant='button'>Make an Appointment</Typography>
-            </ImgCard>
-          </ShadowBox>
+        <Grid item sm={1}></Grid>
+        <Grid item sm={3} xs={12}>
+          <ImgCard img={doctor} to='/appointment/new/list'>
+            <BookIcon color='primary' sx={{m: 1}}/>
+            <Typography variant='button' fontSize={fontSize}>
+              Make an Appointment
+            </Typography>
+          </ImgCard>
         </Grid>
-        <Grid item xs={3}>
-          <ShadowBox>
-            <ImgCard img={pills} to='/prescriptions'>
-              <MedicationIcon color='primary' />
-              <Typography variant='button'>Prescriptions</Typography>
-            </ImgCard>
-          </ShadowBox>
+        <Grid item sm={3} xs={12}>
+          <ImgCard img={pills} to='/prescriptions'>
+            <MedicationIcon color='primary' sx={{m: 1}} />
+            <Typography variant='button' fontSize={fontSize}>
+              Prescriptions
+            </Typography>
+          </ImgCard>
         </Grid>
-        <Grid item xs={3}>
-          <ShadowBox>
-            <ImgCard img={appointments} to='/appointment/upcoming/list'>
-              <EventNoteIcon color='primary' />
-              <Typography variant='button'>Upcoming Appointments</Typography>
-            </ImgCard>
-          </ShadowBox>
+        <Grid item sm={3} xs={12}>
+          <ImgCard img={appointments} to='/appointment/upcoming/list'>
+            <EventNoteIcon color='primary' sx={{m: 1}}/>
+            <Typography variant='button' fontSize={fontSize}>
+              Upcoming Appointments
+            </Typography>
+          </ImgCard>
         </Grid>
-        <Grid item xs={2}></Grid>
+        <Grid item sm={2}></Grid>
       </Grid>
     </TitlePage>
   )

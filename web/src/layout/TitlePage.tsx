@@ -21,7 +21,7 @@ const TitlePage = ({
         {title}
       </Typography>
       {subTitle && (
-        <Typography variant='caption' sx={{ margin: '1rem' }}>
+        <Typography variant='h2' color='black' sx={{ margin: '1rem 0 1rem' }}>
           {subTitle}
         </Typography>
       )}
