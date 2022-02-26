@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 //Firebase.js has website firebase configuration and auth helper function
 
 import { initializeApp } from 'firebase/app'
