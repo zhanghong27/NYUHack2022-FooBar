@@ -5,7 +5,7 @@ import TitlePage from '../layout/TitlePage'
 
 const Prescriptions = () => {
   return (
-    <TitlePage title="Prescriptions" parentPage="/home">
+    <TitlePage title='Prescriptions' parentPage='/home'>
       <Container
         sx={{
           display: 'flex',

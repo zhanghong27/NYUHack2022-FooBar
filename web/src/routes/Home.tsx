@@ -16,32 +16,32 @@ import TitlePage from '../layout/TitlePage'
 const Home = () => {
   return (
     <TitlePage
-      title="Anywhere, Any Healthcare"
-      subTitle="Your First Appointment Starts Here"
+      title='Anywhere, Any Healthcare'
+      subTitle='Your First Appointment Starts Here'
     >
       <Grid container spacing={4}>
         <Grid item xs={1}></Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={doctor} to="/appointment/new/list">
-              <BookIcon color="primary" />
-              <Typography variant="button">Make an Appointment</Typography>
+            <ImgCard img={doctor} to='/appointment/new/list'>
+              <BookIcon color='primary' />
+              <Typography variant='button'>Make an Appointment</Typography>
             </ImgCard>
           </ShadowBox>
         </Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={pills} to="/prescriptions">
-              <MedicationIcon color="primary" />
-              <Typography variant="button">Prescriptions</Typography>
+            <ImgCard img={pills} to='/prescriptions'>
+              <MedicationIcon color='primary' />
+              <Typography variant='button'>Prescriptions</Typography>
             </ImgCard>
           </ShadowBox>
         </Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={appointments} to="/appointment/upcoming/list">
-              <EventNoteIcon color="primary" />
-              <Typography variant="button">Upcoming Appointments</Typography>
+            <ImgCard img={appointments} to='/appointment/upcoming/list'>
+              <EventNoteIcon color='primary' />
+              <Typography variant='button'>Upcoming Appointments</Typography>
             </ImgCard>
           </ShadowBox>
         </Grid>

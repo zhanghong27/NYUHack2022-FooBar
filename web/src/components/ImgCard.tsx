@@ -12,7 +12,7 @@ const ImgCard = ({ children, img, to }: ImgCardProps) => {
   return (
     <Card>
       <CardActionArea component={Link} to={to}>
-        <CardMedia component="img" image={img} />
+        <CardMedia component='img' image={img} />
         {children && <CardActions>{children}</CardActions>}
       </CardActionArea>
     </Card>

@@ -23,16 +23,16 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
         avatar={
           <Avatar
             sx={{ bgcolor: theme.palette.primary.light }}
-            aria-label="recipe"
+            aria-label='recipe'
           >
             {doctor.name[0]}
           </Avatar>
         }
       />
       <CardContent>
-        <Typography variant="body1">
+        <Typography variant='body1'>
           First available appointment at{' '}
-          <Typography color="primary">2022/02/26 4:23</Typography>
+          <Typography color='primary'>2022/02/26 4:23</Typography>
         </Typography>
       </CardContent>
     </Card>

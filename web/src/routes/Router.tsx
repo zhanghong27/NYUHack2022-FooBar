@@ -7,10 +7,10 @@ import ListAppointments from './Appointment/New/List'
 const PageRoutes = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/prescriptions" element={<Prescriptions />} />
-      <Route path="/appointment/new/list" element={<ListAppointments />} />
-      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path='/home' element={<Home />} />
+      <Route path='/prescriptions' element={<Prescriptions />} />
+      <Route path='/appointment/new/list' element={<ListAppointments />} />
+      <Route path='/' element={<Navigate to='/home' />} />
     </Routes>
   )
 }

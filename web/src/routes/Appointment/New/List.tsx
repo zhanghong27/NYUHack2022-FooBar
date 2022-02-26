@@ -11,7 +11,7 @@ const ListAppointments = () => {
   const { data, isLoading } = useQuery('doctors', getDoctors)
 
   return (
-    <TitlePage title="Doctors" parentPage="/home">
+    <TitlePage title='Doctors' parentPage='/home'>
       {isLoading || data === undefined ? (
         'loading'
       ) : (

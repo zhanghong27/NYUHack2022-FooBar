@@ -4,7 +4,7 @@ import { WithChildren } from '../types'
 
 const ShadowBox = ({ children }: WithChildren) => {
   return (
-    <Box component="div" sx={{ boxShadow: 8 }}>
+    <Box component='div' sx={{ boxShadow: 8 }}>
       {children}
     </Box>
   )

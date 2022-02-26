@@ -21,16 +21,16 @@ const PrescriptionList = () => {
       {data.map((prescription) => (
         <Card key={prescription.name}>
           <CardContent>
-            <Typography variant="h4" color={theme.palette.primary.dark}>
+            <Typography variant='h4' color={theme.palette.primary.dark}>
               {prescription.name}
             </Typography>
-            <Typography variant="body1" color={theme.palette.secondary.main}>
+            <Typography variant='body1' color={theme.palette.secondary.main}>
               {prescription.instruction}
             </Typography>
           </CardContent>
           <CardActions>
             <Button>
-              <Typography variant="button">Find Shop</Typography>
+              <Typography variant='button'>Find Shop</Typography>
             </Button>
           </CardActions>
         </Card>

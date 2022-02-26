@@ -17,11 +17,11 @@ const TitlePage = ({
 }: TitlePageProps) => {
   return (
     <Container>
-      <Typography variant="h1" color="primary" sx={{ margin: '1rem 0 1rem' }}>
+      <Typography variant='h1' color='primary' sx={{ margin: '1rem 0 1rem' }}>
         {title}
       </Typography>
       {subTitle && (
-        <Typography variant="caption" sx={{ margin: '1rem' }}>
+        <Typography variant='caption' sx={{ margin: '1rem' }}>
           {subTitle}
         </Typography>
       )}
