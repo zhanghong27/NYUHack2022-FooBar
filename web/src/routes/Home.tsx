@@ -27,7 +27,7 @@ const Home = () => {
         <Grid item sm={1}></Grid>
         <Grid item sm={3} xs={12}>
           <ImgCard img={doctor} to='/appointment/new/list'>
-            <BookIcon color='primary' sx={{m: 1}}/>
+            <BookIcon color='primary' sx={{ m: 1 }} />
             <Typography variant='button' fontSize={fontSize}>
               Make an Appointment
             </Typography>
@@ -35,7 +35,7 @@ const Home = () => {
         </Grid>
         <Grid item sm={3} xs={12}>
           <ImgCard img={pills} to='/prescriptions'>
-            <MedicationIcon color='primary' sx={{m: 1}} />
+            <MedicationIcon color='primary' sx={{ m: 1 }} />
             <Typography variant='button' fontSize={fontSize}>
               Prescriptions
             </Typography>
@@ -43,7 +43,7 @@ const Home = () => {
         </Grid>
         <Grid item sm={3} xs={12}>
           <ImgCard img={appointments} to='/appointment/upcoming/list'>
-            <EventNoteIcon color='primary' sx={{m: 1}}/>
+            <EventNoteIcon color='primary' sx={{ m: 1 }} />
             <Typography variant='button' fontSize={fontSize}>
               Upcoming Appointments
             </Typography>
