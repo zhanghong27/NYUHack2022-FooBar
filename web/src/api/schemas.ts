@@ -5,5 +5,6 @@ export type prescription = {
 }
 
 export type doctor = {
+  id: number
   name: string
 }

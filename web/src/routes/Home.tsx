@@ -38,7 +38,7 @@ const Home = () => {
         <Grid item xs={1}></Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={doctor} to="/home">
+            <ImgCard img={doctor} to="/appointment/new/list">
               <BookIcon color="primary" />
               <Typography variant="button">Make an Appointment</Typography>
             </ImgCard>
@@ -54,7 +54,7 @@ const Home = () => {
         </Grid>
         <Grid item xs={3}>
           <ShadowBox>
-            <ImgCard img={appointments} to="/home">
+            <ImgCard img={appointments} to="/appointment/upcoming/list">
               <EventNoteIcon color="primary" />
               <Typography variant="button">Upcoming Appointments</Typography>
             </ImgCard>
