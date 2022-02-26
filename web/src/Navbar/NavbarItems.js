@@ -2,32 +2,31 @@ export const NavbarItems = [
   {
     title: 'My Appointments',
     url: 'appointment',
-    className: ''
+    className: '',
   },
   {
     title: 'Login',
     url: 'login',
-    className: ''
+    className: '',
   },
   {
     title: 'Signup',
     url: 'signup',
-    className: ''
+    className: '',
   },
   {
-    title: "My Tests",
-    url: "test",
-    className:''
+    title: 'My Tests',
+    url: 'test',
+    className: '',
   },
   {
-    title: "My Medicine Orders",
-    url: "medicine",
-    className:''
+    title: 'My Medicine Orders',
+    url: 'medicine',
+    className: '',
   },
   {
-    title: "My Online Consultation",
-    url: "consult",
-    className:''
-  }
+    title: 'My Online Consultation',
+    url: 'consult',
+    className: '',
+  },
 ]
-

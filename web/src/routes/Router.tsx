@@ -19,8 +19,8 @@ const PageRoutes = () => {
           <Route path='confirm' element={<NewAppointmentConfirm />} />
         </Route>
       </Route>
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
       <Route path='/' element={<Navigate to='/home' />} />
       <Route path='*' element={<NotFound />}></Route>
     </Routes>

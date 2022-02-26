@@ -1,5 +1,5 @@
-.Navbar{
-  background-color:#3F8EFC;
+.Navbar {
+  background-color: #3f8efc;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -7,7 +7,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.NavbarLogo{
+.NavbarLogo {
   color: white;
   justify-self: start;
   margin-left: 0px;
@@ -15,7 +15,6 @@
   text-decoration: none;
   font-size: 30px;
 }
-
 
 .Navbar .leftSide {
   flex: 50%;
@@ -30,7 +29,7 @@
   width: 300px;
   height: 30px;
   border: none;
-  border-radius:4px;
+  border-radius: 4px;
   font-size: 20px;
   margin-left: 15px;
   color: red;
@@ -42,7 +41,7 @@
   font-size: 16px;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
 }
 
@@ -91,6 +90,6 @@ button:hover{
   .Navbar .rightSide #hidden {
     position: absolute;
     right: 0px;
-    top:8px;
+    top: 8px;
   }
 }

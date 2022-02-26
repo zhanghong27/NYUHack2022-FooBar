@@ -1,88 +1,90 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
-import {
-  auth, signUp,
-} from '../firebase';
-import "./Signup.css";
-
-
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth, signUp } from '../firebase'
+import './Signup.css'
 
 function SignupForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [name, setName] = useState("");
-  const [user, loading] = useAuthState(auth);
-  const navigate = useNavigate();
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('')
+  const [name, setName] = useState('')
+  const [user, loading] = useAuthState(auth)
+  const navigate = useNavigate()
 
   // checking sign up information
   const signup = () => {
     if (!name) {
-      alert("Please enter name");
+      alert('Please enter name')
     } else if (password !== passwordConfirmation) {
-      alert("Passwords don't match");
+      alert("Passwords don't match")
     } else {
-      signUp(name, email, password);
+      signUp(name, email, password)
     }
   }
 
   useEffect(() => {
     // if it's loading trigger a loading screen
     // go back to home page after signup successfully
-    if (loading) return;
+    if (loading) return
     if (user) navigate('/', { replace: true })
-  }, [user, loading, history]);
+  }, [user, loading, history])
 
   return (
-    <div className="signup">
-      <div className="signupContainer">
+    <div className='signup'>
+      <div className='signupContainer'>
         <h1>Sign Up</h1>
-        <div className="signupText" >Full Name</div>
+        <div className='signupText'>Full Name</div>
         <input
-          type="text"
-          className="signupTextBox"
+          type='text'
+          className='signupTextBox'
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="John Doe"
+          placeholder='John Doe'
         />
-        <div className="signupText" >Email</div>
+        <div className='signupText'>Email</div>
         <input
-          type="text"
-          className="signupTextBox"
+          type='text'
+          className='signupTextBox'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="email@email.com"
+          placeholder='email@email.com'
         />
-        <div className="signupText" >Password</div>
+        <div className='signupText'>Password</div>
         <input
-          type="password"
-          className="signupTextBox"
+          type='password'
+          className='signupTextBox'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
+          placeholder='Password'
         />
-        <div className="signupText" >Password Confirmation</div>
+        <div className='signupText'>Password Confirmation</div>
         <input
-          type="password"
-          className="signupTextBox"
+          type='password'
+          className='signupTextBox'
           value={passwordConfirmation}
           onChange={(e) => setPasswordConfirmation(e.target.value)}
-          placeholder="Password"
+          placeholder='Password'
         />
-        <div style={{
-          fontSize: "12px", marginTop: "0px", marginBottom: "10px"
-        }}>Use 6 or more characters with letters, numbers & symbols</div>
+        <div
+          style={{
+            fontSize: '12px',
+            marginTop: '0px',
+            marginBottom: '10px',
+          }}
+        >
+          Use 6 or more characters with letters, numbers & symbols
+        </div>
 
-        <button className="signupBtn" onClick={signup}>
+        <button className='signupBtn' onClick={signup}>
           Sign Up
         </button>
         <div>
-          Already have an account? <Link to="/login">Login</Link> now.
+          Already have an account? <Link to='/login'>Login</Link> now.
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default SignupForm;
+export default SignupForm

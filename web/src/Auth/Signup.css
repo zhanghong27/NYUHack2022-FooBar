@@ -9,13 +9,13 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: #3F8EFC;
+  background-color: #3f8efc;
   padding: 30px;
   width: 300px;
   border-radius: 30px;
 }
 
-.signupText{
+.signupText {
   text-align: left;
 }
 
@@ -36,7 +36,6 @@
   height: 50px;
   background-color: rgb(46, 49, 206);
 }
-
 
 .signup div {
   margin-top: 7px;
