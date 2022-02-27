@@ -1,30 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import { VideoTrack } from 'twilio-video'
+import React, { useEffect } from 'react'
 import VideoWindow from '../../components/Twilio/VideoWindow'
 import useRoom from '../../hooks/useRoom'
+import useTracks from '../../hooks/useTracks'
 
-const VideoChat = () => {
-  const {connect, room} = useRoom({
+const VideoChat = ({ isDoctor = false }: { isDoctor?: boolean }) => {
+  const { connect, room } = useRoom({
     roomName: 'asd',
+    isDoctor: isDoctor,
   })
-  const [track, setTrack] = useState<VideoTrack>();
+  const [videoTrack, audioTrack] = useTracks({ room: room })
+  const [doctorVideoTrack, doctorAudioTrack] = useTracks({
+    room: room,
+    isLocal: false,
+  })
 
-  useEffect(()=> {
-    connect()
-  }, []);
-  
   useEffect(() => {
-    if (!room) return
+    connect()
+  }, [isDoctor])
 
-    room.localParticipant.videoTracks.forEach(publication => {
-      console.log(publication.track)
-      setTrack(publication.track)
-    })
-  }, [room])
-
-  if (!track) return <>loading</>
-
-  return <VideoWindow track={track} />
+  return (
+    <>
+      <VideoWindow track={videoTrack} />
+      <VideoWindow track={doctorVideoTrack} />
+    </>
+  )
 }
 
 export default VideoChat

@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import { VideoTrack } from 'twilio-video'
 
 type VideoWindowProps = {
-  track?: VideoTrack
+  track?: VideoTrack | null
 }
 
 const Video = styled('video')({
@@ -18,7 +18,7 @@ const VideoWindow = ({ track }: VideoWindowProps) => {
     if (!track || !ref.current) return
 
     track.attach(ref.current)
-    
+
     return () => {
       if (!track || !ref.current) return
 
@@ -26,6 +26,7 @@ const VideoWindow = ({ track }: VideoWindowProps) => {
     }
   }, [track])
 
+  if (track === null) return <>Not available</>
   if (!track) return <>loading</>
 
   return <Video ref={ref} />

@@ -18,6 +18,8 @@ const PageRoutes = () => {
           <Route path='list' element={<ListAppointments />} />
           <Route path='confirm' element={<NewAppointmentConfirm />} />
         </Route>
+        <Route path='video' element={<AppointmentVideoChat />} />
+        <Route path='video-doc' element={<AppointmentVideoChat isDoctor />} />
       </Route>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
