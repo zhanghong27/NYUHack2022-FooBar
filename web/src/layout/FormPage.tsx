@@ -8,11 +8,7 @@ export type FormPageProps = WithChildren<{
   parentPage?: string
 }>
 
-const FormPage = ({
-  title,
-  parentPage,
-  children,
-}: FormPageProps) => {
+const FormPage = ({ title, parentPage, children }: FormPageProps) => {
   return (
     <Container>
       <Typography variant='h1' color='primary' sx={{ margin: '1rem 0 1rem' }}>
