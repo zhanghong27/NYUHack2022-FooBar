@@ -2,7 +2,9 @@ import React from 'react'
 import { doctor } from '../../api/schemas'
 import {
   Avatar,
+  Button,
   Card,
+  CardActions,
   CardContent,
   CardHeader,
   Typography,
@@ -11,9 +13,10 @@ import {
 
 export type DoctorCardProps = {
   doctor: doctor
+  onClick?: (doctor: doctor) => void
 }
 
-const DoctorCard = ({ doctor }: DoctorCardProps) => {
+const DoctorCard = ({ doctor, onClick }: DoctorCardProps) => {
   const theme = useTheme()
 
   return (
@@ -35,6 +38,9 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
           <Typography color='primary'>2022/02/26 4:23</Typography>
         </Typography>
       </CardContent>
+      <CardActions>
+        <Button onClick={() => onClick && onClick(doctor)}>Appointment</Button>
+      </CardActions>
     </Card>
   )
 }

@@ -5,9 +5,10 @@ import DoctorCard from './DoctorCard'
 
 type DoctorCardListProps = {
   doctors: doctor[]
+  onClick?: (doctor: doctor) => void
 }
 
-const DoctorCardList = ({ doctors }: DoctorCardListProps) => {
+const DoctorCardList = ({ doctors, onClick }: DoctorCardListProps) => {
   return (
     <Box
       sx={{
@@ -18,7 +19,7 @@ const DoctorCardList = ({ doctors }: DoctorCardListProps) => {
       }}
     >
       {doctors.map((doctor) => (
-        <DoctorCard key={doctor.id} doctor={doctor} />
+        <DoctorCard key={doctor.id} doctor={doctor} onClick={onClick} />
       ))}
     </Box>
   )
