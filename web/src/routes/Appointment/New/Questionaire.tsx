@@ -10,6 +10,7 @@ import {
 } from '@mui/material'
 import FormPage from '../../../layout/FormPage'
 import { useNavigate } from 'react-router'
+import { useSearchParams } from 'react-router-dom'
 
 const doctorTypes = [
   'Ophthalmologist',
@@ -24,8 +25,9 @@ const doctorTypes = [
 ]
 
 const Questionnaire = () => {
-  const [symptoms, setSymptoms] = useState('')
-  const [doctorType, setDoctorType] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [symptoms, setSymptoms] = useState(searchParams.get('symptoms'))
+  const [doctorType, setDoctorType] = useState(searchParams.get('doctorType'))
   const navigate = useNavigate()
 
   const handleGo = useCallback(() => {
@@ -45,7 +47,7 @@ const Questionnaire = () => {
       >
         <TextField
           label='Symptoms'
-          onChange={(e) => setSymptoms(e.target.value)}
+          onChange={(e) => {setSymptoms(e.target.value); setSearchParams({symptoms: e.target.value})}}
           value={symptoms}
         />
         <FormControl>
@@ -53,7 +55,7 @@ const Questionnaire = () => {
           <Select
             labelId='doctor-type-label'
             label='Expertise'
-            onChange={(e) => setDoctorType(e.target.value)}
+            onChange={(e) => {setDoctorType(e.target.value); setSearchParams({doctorType: e.target.value === null ? "" : e.target.value})}}
             value={doctorType}
           >
             {doctorTypes.map((doctorType) => (
@@ -63,7 +65,7 @@ const Questionnaire = () => {
             ))}
           </Select>
         </FormControl>
-        <Button onClick={handleGo} disabled={!symptoms || !doctorType}>
+        <Button variant='contained' onClick={handleGo} disabled={!symptoms || !doctorType}>
           Go
         </Button>
       </Box>

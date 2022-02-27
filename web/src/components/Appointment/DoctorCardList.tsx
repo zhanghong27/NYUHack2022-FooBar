@@ -2,6 +2,7 @@ import React from 'react'
 import { Box } from '@mui/system'
 import { doctor } from '../../api/schemas'
 import DoctorCard from './DoctorCard'
+import GrowBox from '../GrowBox'
 
 type DoctorCardListProps = {
   doctors: doctor[]
@@ -18,8 +19,10 @@ const DoctorCardList = ({ doctors, onClick }: DoctorCardListProps) => {
         },
       }}
     >
-      {doctors.map((doctor) => (
-        <DoctorCard key={doctor.id} doctor={doctor} onClick={onClick} />
+      {doctors.map((doctor, index) => (
+        <GrowBox key={doctor.id} duration={index * 500} maxDuration={2000}>
+          <DoctorCard doctor={doctor} onClick={onClick} />
+        </GrowBox>
       ))}
     </Box>
   )

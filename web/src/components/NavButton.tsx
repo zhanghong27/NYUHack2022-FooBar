@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button } from '@mui/material'
-import { useNavigate } from 'react-router'
+import { To, useNavigate } from 'react-router'
 import { WithChildren } from '../types'
 
 export type BackButtonProps = WithChildren<{
-  to: string
+  to: To
 }>
 
 const NavButton = ({ to, children }: BackButtonProps) => {

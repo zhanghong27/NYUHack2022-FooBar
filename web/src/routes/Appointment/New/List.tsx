@@ -22,7 +22,7 @@ const ListAppointments = () => {
   }
 
   return (
-    <TitlePage title='Doctors' parentPage='/home'>
+    <TitlePage title='Doctors' parentPage={`/appointment/new?symptoms=${symptoms}&doctorType=${doctorType}`}>
       {isLoading || data === undefined ? (
         <CircularProgress />
       ) : (

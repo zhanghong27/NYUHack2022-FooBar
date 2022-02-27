@@ -33,13 +33,16 @@ const DoctorCard = ({ doctor, onClick }: DoctorCardProps) => {
         }
       />
       <CardContent>
+        <Typography>
+          Area - {doctor.area}
+        </Typography>
         <Typography variant='body1'>
-          First available appointment at{' '}
-          <Typography color='primary'>2022/02/26 4:23</Typography>
+          Available from{' '}
+          <Typography color='primary' component='span'>2022/02/26 4:20</Typography>
         </Typography>
       </CardContent>
       <CardActions>
-        <Button onClick={() => onClick && onClick(doctor)}>Appointment</Button>
+        <Button onClick={() => onClick && onClick(doctor)}>Schedule</Button>
       </CardActions>
     </Card>
   )
