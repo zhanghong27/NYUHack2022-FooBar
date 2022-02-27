@@ -32,7 +32,9 @@ function LoginForm() {
     <div className='login'>
       <Card variant='outlined'>
         <CardContent>
-          <Typography variant='h1' color='primary'>Log In</Typography>
+          <Typography variant='h1' color='primary'>
+            Log In
+          </Typography>
           <div className='signupText'>Email</div>
           <input
             type='text'
@@ -49,7 +51,7 @@ function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder='Password'
           />
-          <Button onClick={() => signIn(email, password)}>
+          <Button variant='contained' onClick={() => signIn(email, password)}>
             Login
           </Button>
 

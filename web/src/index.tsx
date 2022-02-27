@@ -6,7 +6,11 @@ import { HashRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename={process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : ''}>
+    <HashRouter
+      basename={
+        process.env.NODE_ENV === 'production' ? process.env.PUBLIC_URL : ''
+      }
+    >
       <App />
     </HashRouter>
   </React.StrictMode>,

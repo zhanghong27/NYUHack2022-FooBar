@@ -27,6 +27,10 @@ export const getDoctors = async ({
   )
 }
 
-export const getDoctor = async ({name}: {name: string}): Promise<doctor | undefined> => {
+export const getDoctor = async ({
+  name,
+}: {
+  name: string
+}): Promise<doctor | undefined> => {
   return doctors.filter((doctor) => doctor.name === name).at(0)
 }

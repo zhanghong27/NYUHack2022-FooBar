@@ -34,11 +34,13 @@ const ConfirmSelectAppointment = () => {
     navigate('/home')
     return <></>
   }
-  const doctor = useQuery(['getDoctor', doctorName], () => getDoctor({name: doctorName}))
+  const doctor = useQuery(['getDoctor', doctorName], () =>
+    getDoctor({ name: doctorName })
+  )
 
   useEffect(() => {
     if (!confirmed) return
-    if (doctor.data) addAppointment({doctor: doctor.data})
+    if (doctor.data) addAppointment({ doctor: doctor.data })
     const timeout = setTimeout(() => {
       navigate('/home')
     }, 1500)

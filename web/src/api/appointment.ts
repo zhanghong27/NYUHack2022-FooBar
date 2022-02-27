@@ -50,14 +50,15 @@ export const endAppointment = async ({
   save('appointments', appointments)
 }
 
-export const addAppointment = async ({doctor}: {doctor: doctor}) => {
-  const id = appointments.length > 0 ? appointments[appointments.length - 1].id : 0
+export const addAppointment = async ({ doctor }: { doctor: doctor }) => {
+  const id =
+    appointments.length > 0 ? appointments[appointments.length - 1].id : 0
   appointments.push({
     id: id,
     isEnded: false,
     time: new Date().toLocaleDateString(),
     doctor: doctor,
-    prescriptions: []
+    prescriptions: [],
   })
   save('appointments', appointments)
 }
