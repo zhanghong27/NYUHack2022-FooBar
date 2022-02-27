@@ -24,12 +24,14 @@ const UpcomingAppointments = () => {
 
   return (
     <TitlePage title='Appointments' parentPage='/home'>
-      <Box sx={{
-              '& > :not(style)': {
-                m: 2,
-                width: '60vw',
-              },
-            }}>
+      <Box
+        sx={{
+          '& > :not(style)': {
+            m: 2,
+            width: '60vw',
+          },
+        }}
+      >
         {appointments.data ? (
           appointments.data.map((appointment, index) => (
             <GrowBox
@@ -40,7 +42,8 @@ const UpcomingAppointments = () => {
               <Card variant='outlined'>
                 <CardContent>
                   <Typography color='primary'>
-                    Appointment with {appointment.doctor.name} ({appointment.isEnded ? 'Ended' : 'Upcoming'})
+                    Appointment with {appointment.doctor.name} (
+                    {appointment.isEnded ? 'Ended' : 'Upcoming'})
                   </Typography>
                 </CardContent>
                 <CardActions>
