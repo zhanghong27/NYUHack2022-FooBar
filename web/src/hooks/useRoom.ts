@@ -15,7 +15,11 @@ export type RoomHookProps = {
 const useRoom = ({
   roomName,
   isDoctor = false,
-}: RoomHookProps): { room?: Room; connect: () => Promise<void> } => {
+}: RoomHookProps): {
+  room?: Room
+  connect: () => Promise<void>
+  disconnect: () => void
+} => {
   const [room, setRoom] = useState<Room | undefined>(undefined)
 
   const connect = useCallback(
@@ -37,7 +41,12 @@ const useRoom = ({
     [roomName]
   )
 
-  return { room, connect }
+  const disconnect = useCallback(() => {
+    if (!room) return
+    room?.disconnect()
+  }, [roomName])
+
+  return { room, connect, disconnect }
 }
 
 export default useRoom

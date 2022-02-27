@@ -13,7 +13,7 @@ import TitlePage from '../../../layout/TitlePage'
 
 const ListAppointments = () => {
   const navigate = useNavigate()
-  const { data, isLoading } = useQuery('doctors', getDoctors)
+  const { data, isLoading } = useQuery('doctors', () => getDoctors({}))
   const [searchParams] = useSearchParams()
   const [symptoms, doctorType] = [
     searchParams.get('symptoms'),

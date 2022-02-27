@@ -9,3 +9,11 @@ export type doctor = {
   name: string
   area: string
 }
+
+export type appointment = {
+  id: number
+  doctor: doctor
+  prescriptions: prescription[]
+  time: string
+  isEnded: boolean
+}

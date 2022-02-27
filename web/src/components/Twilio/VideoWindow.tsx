@@ -1,4 +1,4 @@
-import { styled } from '@mui/material'
+import { styled, Typography } from '@mui/material'
 import React, { useEffect, useRef } from 'react'
 import { VideoTrack } from 'twilio-video'
 
@@ -8,7 +8,6 @@ type VideoWindowProps = {
 
 const Video = styled('video')({
   width: '100%',
-  height: '100%',
 })
 
 const VideoWindow = ({ track }: VideoWindowProps) => {
@@ -26,8 +25,12 @@ const VideoWindow = ({ track }: VideoWindowProps) => {
     }
   }, [track])
 
-  if (track === null) return <>Not available</>
-  if (!track) return <>loading</>
+  if (!track)
+    return (
+      <Typography variant='body2' color='secondary'>
+        Not available
+      </Typography>
+    )
 
   return <Video ref={ref} />
 }
