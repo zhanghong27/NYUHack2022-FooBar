@@ -4,6 +4,7 @@ import { auth, signIn, signInWithGoogle } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import GoogleButton from 'react-google-button'
 import './Login.css'
+import { Button, Card, CardContent, Typography } from '@mui/material'
 
 function LoginForm() {
   const [email, setEmail] = useState('')
@@ -29,58 +30,60 @@ function LoginForm() {
 
   return (
     <div className='login'>
-      <div className='loginContainer'>
-        <h1>Log In</h1>
-        <div className='signupText'>Email</div>
-        <input
-          type='text'
-          className='loginTextBox'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder='email@email.com'
-        />
-        <div className='signupText'>Password</div>
-        <input
-          type='password'
-          className='loginTextBox'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder='Password'
-        />
-        <button className='loginBtn' onClick={() => signIn(email, password)}>
-          Login
-        </button>
+      <Card variant='outlined'>
+        <CardContent>
+          <Typography variant='h1' color='primary'>Log In</Typography>
+          <div className='signupText'>Email</div>
+          <input
+            type='text'
+            className='loginTextBox'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder='email@email.com'
+          />
+          <div className='signupText'>Password</div>
+          <input
+            type='password'
+            className='loginTextBox'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder='Password'
+          />
+          <Button onClick={() => signIn(email, password)}>
+            Login
+          </Button>
 
-        <GoogleButton
-          style={{ width: '300px', marginBottom: '10px' }}
-          type='light'
-          onClick={signInWithGoogle}
-        />
+          <GoogleButton
+            style={{ width: '300px', marginBottom: '10px' }}
+            type='light'
+            onClick={signInWithGoogle}
+          />
 
-        <div>
-          <Link
-            to='/reset'
-            style={{
-              textDecoration: 'none',
-              color: '',
-            }}
-          >
-            Forgot Password?
-          </Link>
-        </div>
-        <div>
-          Do not have an account?{' '}
-          <Link
-            to='/signup'
-            style={{
-              textDecoration: 'none',
-            }}
-          >
-            Sign Up
-          </Link>{' '}
-          now.
-        </div>
-      </div>
+          <div>
+            <Link
+              to='/reset'
+              style={{
+                textDecoration: 'none',
+                color: '',
+              }}
+            >
+              Forgot Password?
+            </Link>
+          </div>
+          <div>
+            Do not have an account?{' '}
+            <Link
+              to='/signup'
+              style={{
+                textDecoration: 'none',
+              }}
+            >
+              Sign Up
+            </Link>{' '}
+            now.
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }

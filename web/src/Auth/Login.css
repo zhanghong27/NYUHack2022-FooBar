@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 90vh;
+  color: white;
 }
 
 .loginContainer {
@@ -22,7 +23,6 @@
 .loginTextBox {
   border-radius: 10px;
   padding: 10px;
-  font-size: 18px;
   margin-bottom: 8px;
   border: none;
   margin-top: 5px;
