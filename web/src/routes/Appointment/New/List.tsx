@@ -15,18 +15,26 @@ const ListAppointments = () => {
   const navigate = useNavigate()
   const { data, isLoading } = useQuery('doctors', getDoctors)
   const [searchParams] = useSearchParams()
-  const [symptoms, doctorType] = [searchParams.get('symptoms'), searchParams.get('doctorType')]
+  const [symptoms, doctorType] = [
+    searchParams.get('symptoms'),
+    searchParams.get('doctorType'),
+  ]
 
   const handleConfim = (doctor: doctor) => {
-    navigate(`../confirm?symptoms=${symptoms}&doctorType=${doctorType}&doctorId=${doctor.id}&doctorName=${doctor.name}`)
+    navigate(
+      `../confirm?symptoms=${symptoms}&doctorType=${doctorType}&doctorId=${doctor.id}&doctorName=${doctor.name}`
+    )
   }
 
   return (
-    <TitlePage title='Doctors' parentPage={`/appointment/new?symptoms=${symptoms}&doctorType=${doctorType}`}>
+    <TitlePage
+      title='Doctors'
+      parentPage={`/appointment/new?symptoms=${symptoms}&doctorType=${doctorType}`}
+    >
       {isLoading || data === undefined ? (
         <CircularProgress />
       ) : (
-        <DoctorCardList doctors={data} onClick={handleConfim}/>
+        <DoctorCardList doctors={data} onClick={handleConfim} />
       )}
     </TitlePage>
   )

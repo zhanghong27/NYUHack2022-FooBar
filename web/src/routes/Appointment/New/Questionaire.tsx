@@ -47,7 +47,10 @@ const Questionnaire = () => {
       >
         <TextField
           label='Symptoms'
-          onChange={(e) => {setSymptoms(e.target.value); setSearchParams({symptoms: e.target.value})}}
+          onChange={(e) => {
+            setSymptoms(e.target.value)
+            setSearchParams({ symptoms: e.target.value })
+          }}
           value={symptoms}
         />
         <FormControl>
@@ -55,7 +58,12 @@ const Questionnaire = () => {
           <Select
             labelId='doctor-type-label'
             label='Expertise'
-            onChange={(e) => {setDoctorType(e.target.value); setSearchParams({doctorType: e.target.value === null ? "" : e.target.value})}}
+            onChange={(e) => {
+              setDoctorType(e.target.value)
+              setSearchParams({
+                doctorType: e.target.value === null ? '' : e.target.value,
+              })
+            }}
             value={doctorType}
           >
             {doctorTypes.map((doctorType) => (
@@ -65,7 +73,11 @@ const Questionnaire = () => {
             ))}
           </Select>
         </FormControl>
-        <Button variant='contained' onClick={handleGo} disabled={!symptoms || !doctorType}>
+        <Button
+          variant='contained'
+          onClick={handleGo}
+          disabled={!symptoms || !doctorType}
+        >
           Go
         </Button>
       </Box>

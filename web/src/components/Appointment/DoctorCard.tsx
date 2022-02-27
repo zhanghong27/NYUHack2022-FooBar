@@ -33,12 +33,12 @@ const DoctorCard = ({ doctor, onClick }: DoctorCardProps) => {
         }
       />
       <CardContent>
-        <Typography>
-          Area - {doctor.area}
-        </Typography>
+        <Typography>Area - {doctor.area}</Typography>
         <Typography variant='body1'>
           Available from{' '}
-          <Typography color='primary' component='span'>2022/02/26 4:20</Typography>
+          <Typography color='primary' component='span'>
+            2022/02/26 4:20
+          </Typography>
         </Typography>
       </CardContent>
       <CardActions>

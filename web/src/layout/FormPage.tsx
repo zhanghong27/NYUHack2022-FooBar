@@ -17,7 +17,16 @@ const FormPage = ({ title, parentPage, children }: FormPageProps) => {
       <Grid container>
         <Grid sm={2} item />
         <Grid sm={8} xs={12} item>
-          <Container>{children}</Container>
+          <Container
+            sx={{
+              display: 'flex',
+              alignItem: 'center',
+              WebkitAlignItems: 'center',
+              flexDirection: 'column',
+            }}
+          >
+            {children}
+          </Container>
         </Grid>
       </Grid>
       {parentPage && (
