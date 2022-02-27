@@ -24,7 +24,7 @@ const AppointmentDetails = () => {
   return (
     <FormPage
       title={`Appointment with ${appointment.data?.doctor.name ?? 'Loading'}`}
-      parentPage='/home'
+      parentPage='/appointment/upcoming'
     >
       {appointment.data === undefined ? (
         <Skeleton />

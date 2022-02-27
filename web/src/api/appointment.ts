@@ -1,6 +1,6 @@
 import { doctors } from './doctor'
 import { prescriptions } from './prescriptions'
-import { appointment } from './schemas'
+import { appointment, doctor } from './schemas'
 import { save, tryRetrieve } from './utils'
 
 const appointments: appointment[] = tryRetrieve('appointments', [
@@ -50,7 +50,18 @@ export const endAppointment = async ({
   save('appointments', appointments)
 }
 
+export const addAppointment = async ({doctor}: {doctor: doctor}) => {
+  const id = appointments.length > 0 ? appointments[appointments.length - 1].id : 0
+  appointments.push({
+    id: id,
+    isEnded: false,
+    time: new Date().toLocaleDateString(),
+    doctor: doctor,
+    prescriptions: []
+  })
+  save('appointments', appointments)
+}
+
 export const upcomingAppointments = async (): Promise<appointment[]> => {
-  const now = new Date()
-  return appointments.filter((appointment) => new Date(appointment.time) > now)
+  return appointments
 }

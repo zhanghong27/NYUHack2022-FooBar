@@ -26,3 +26,7 @@ export const getDoctors = async ({
     (doctor) => (!id || doctor.id === id) && (!name || doctor.name === name)
   )
 }
+
+export const getDoctor = async ({name}: {name: string}): Promise<doctor | undefined> => {
+  return doctors.filter((doctor) => doctor.name === name).at(0)
+}

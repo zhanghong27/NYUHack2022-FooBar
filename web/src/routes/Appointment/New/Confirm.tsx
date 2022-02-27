@@ -16,6 +16,9 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import FormPage from '../../../layout/FormPage'
 import { Container } from '@mui/material'
 import { useNavigate } from 'react-router'
+import { addAppointment } from '../../../api/appointment'
+import { useQuery } from 'react-query'
+import { getDoctor } from '../../../api/doctor'
 
 const ConfirmSelectAppointment = () => {
   const [confirmed, setConfirmed] = useState(false)
@@ -27,9 +30,15 @@ const ConfirmSelectAppointment = () => {
     searchParams.get('time'),
   ]
   const navigate = useNavigate()
+  if (!doctorName) {
+    navigate('/home')
+    return <></>
+  }
+  const doctor = useQuery(['getDoctor', doctorName], () => getDoctor({name: doctorName}))
 
   useEffect(() => {
     if (!confirmed) return
+    if (doctor.data) addAppointment({doctor: doctor.data})
     const timeout = setTimeout(() => {
       navigate('/home')
     }, 1500)
