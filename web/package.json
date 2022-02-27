@@ -2,6 +2,7 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pig208.github.io/NYUHack2022-FooBar",
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@emotion/react": "^11.8.1",
@@ -37,7 +38,7 @@
     "eject": "craco eject",
     "lint": "prettier -c ./src && eslint ./src",
     "format": "prettier -w ./src",
-    "deploy": "gh-pages -d build -b gh-pages"
+    "deploy": "gh-pages -d build -o pig208 -b gh-pages"
   },
   "eslintConfig": {
     "extends": [
