@@ -6,6 +6,7 @@ import Login from '../Auth/Login'
 import Signup from '../Auth/Signup'
 import ListAppointments from './Appointment/New/List'
 import NewAppointmentConfirm from './Appointment/New/Confirm'
+import AppointmentVideoChat from './Appointment/VideoChat'
 import NotFound from './NotFound'
 
 const PageRoutes = () => {

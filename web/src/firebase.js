@@ -30,7 +30,7 @@ const db = getFirestore(app)
 const provider = new GoogleAuthProvider()
 provider.setCustomParameters({
   login_hint: 'user@example.com',
-  prompt: 'select_account'
+  prompt: 'select_account',
 })
 
 const signIn = async (email, password) => {

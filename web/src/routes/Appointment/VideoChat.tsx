@@ -8,8 +8,8 @@ const VideoChat = ({ isDoctor = false }: { isDoctor?: boolean }) => {
     roomName: 'asd',
     isDoctor: isDoctor,
   })
-  const [videoTrack, audioTrack] = useTracks({ room: room })
-  const [doctorVideoTrack, doctorAudioTrack] = useTracks({
+  const [videoTrack] = useTracks({ room: room })
+  const [doctorVideoTrack] = useTracks({
     room: room,
     isLocal: false,
   })
