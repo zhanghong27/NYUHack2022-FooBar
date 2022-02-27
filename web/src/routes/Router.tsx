@@ -1,26 +1,36 @@
 import React from 'react'
 import Home from './Home'
-import Prescriptions from './Prescriptions'
 import { Navigate, Route, Routes } from 'react-router'
 import Login from '../Auth/Login'
 import Signup from '../Auth/Signup'
-import ListAppointments from './Appointment/New/List'
+import AppointmentsList from './Appointment/New/List'
+import PastAppointmentsList from './Appointment'
 import NewAppointmentConfirm from './Appointment/New/Confirm'
 import AppointmentVideoChat from './Appointment/VideoChat'
+import UpcomingAppointments from './Appointment/Upcoming'
+import AppointmentDetails from './Appointment/Details'
+import PrescriptionsList from './Prescriptions/List'
+import PrescriptionsDetails from './Prescriptions/Details'
 import NotFound from './NotFound'
+import Questionnaire from './Appointment/New/Questionaire'
 
 const PageRoutes = () => {
   return (
     <Routes>
       <Route path='/home' element={<Home />} />
-      <Route path='/prescriptions' element={<Prescriptions />} />
-      <Route path='/appointment'>
-        <Route path='new'>
-          <Route path='list' element={<ListAppointments />} />
+      <Route path='/prescriptions' />
+        <Route path='list' element={<PrescriptionsList />}>
+        <Route path='details/:id' element={<PrescriptionsDetails />}/>
+      </Route>
+      <Route path='/appointment' element={<PastAppointmentsList />}>
+        <Route path='new' element={<Questionnaire />}>
+          <Route path='list' element={<AppointmentsList />} />
           <Route path='confirm' element={<NewAppointmentConfirm />} />
         </Route>
-        <Route path='video' element={<AppointmentVideoChat />} />
-        <Route path='video-doc' element={<AppointmentVideoChat isDoctor />} />
+        <Route path='upcoming' element={<UpcomingAppointments />}/>
+        <Route path='details/:id' element={<AppointmentDetails />}/>
+        <Route path='video/:id' element={<AppointmentVideoChat />} />
+        <Route path='video-doc/:id' element={<AppointmentVideoChat isDoctor />} />
       </Route>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />

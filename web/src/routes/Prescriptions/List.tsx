@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container, Divider } from '@mui/material'
-import PrescriptionList from '../components/Prescriptions/PrescriptionsCardList'
-import TitlePage from '../layout/TitlePage'
+import PrescriptionList from '../../components/Prescriptions/PrescriptionsCardList'
+import TitlePage from '../../layout/TitlePage'
 
-const Prescriptions = () => {
+const PrescriptionsList = () => {
   return (
     <TitlePage title='Prescriptions' parentPage='/home'>
       <Container
@@ -24,4 +24,4 @@ const Prescriptions = () => {
   )
 }
 
-export default Prescriptions
+export default PrescriptionsList
