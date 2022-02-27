@@ -15,18 +15,13 @@ export const NavbarItems = [
     className: '',
   },
   {
-    title: 'My Tests',
-    url: 'test',
+    title: 'Prescriptions',
+    url: '/prescriptions/list',
     className: '',
   },
   {
-    title: 'My Medicine Orders',
-    url: 'medicine',
-    className: '',
-  },
-  {
-    title: 'My Online Consultation',
-    url: 'consult',
+    title: 'Appointments',
+    url: '/appointment/upcoming',
     className: '',
   },
 ]

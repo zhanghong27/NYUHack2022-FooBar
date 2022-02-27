@@ -65,7 +65,7 @@ button:hover {
 .Navbar .rightSide .menuLinks a {
   text-decoration: none;
   color: white;
-  font-size: 20px;
+  font-size: 0.8rem;
   margin-left: 25px;
 }
 
@@ -74,22 +74,4 @@ button:hover {
   margin-left: 20px;
   padding: 20px;
   height: 30px;
-}
-
-@media only screen and (max-width: 800px) {
-  .Navbar .rightSide .menuLinks a {
-    background-color: lightblue;
-    font-size: 15px;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .Navbar .rightSide .button {
-    display: flex;
-  }
-  .Navbar .rightSide #hidden {
-    position: absolute;
-    right: 0px;
-    top: 8px;
-  }
 }

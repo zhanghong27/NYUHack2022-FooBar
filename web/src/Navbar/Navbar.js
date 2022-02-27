@@ -12,7 +12,7 @@ export default function Navbar() {
     <div className='Navbar'>
       <div className='leftSide'>
         <Link to='/' className='NavbarLogo'>
-          Dr.OnCall
+          Dr. OnCall
         </Link>
         <div className='NavbarIcon'></div>
       </div>
@@ -53,7 +53,7 @@ export default function Navbar() {
                 border: 'none',
                 borderRadius: '5px',
                 marginLeft: '25px',
-                fontSize: '18px',
+                fontSize: '0.8rem',
                 color: '#3F8EFC',
                 padding: '5px',
                 fontWeight: 'bold',
