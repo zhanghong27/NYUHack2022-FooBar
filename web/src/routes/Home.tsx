@@ -34,7 +34,7 @@ const Home = () => {
           </ImgCard>
         </Grid>
         <Grid item sm={3} xs={12}>
-          <ImgCard img={pills} to='/prescriptions'>
+          <ImgCard img={pills} to='/prescriptions/list'>
             <MedicationIcon color='primary' sx={{ m: 1 }} />
             <Typography variant='button' fontSize={fontSize}>
               Prescriptions
@@ -42,10 +42,10 @@ const Home = () => {
           </ImgCard>
         </Grid>
         <Grid item sm={3} xs={12}>
-          <ImgCard img={appointments} to='/appointment/upcoming/list'>
+          <ImgCard img={appointments} to='/appointment/upcoming'>
             <EventNoteIcon color='primary' sx={{ m: 1 }} />
             <Typography variant='button' fontSize={fontSize}>
-              Upcoming Appointments
+              Appointments
             </Typography>
           </ImgCard>
         </Grid>

@@ -15,6 +15,9 @@ const AppointmentPrescriptions = ({
           appointment.prescriptions.map((prescription, index) => (
             <Box key={index} sx={{ m: '1rem' }}>
               <Typography>{prescription.name}</Typography>
+              <Typography color='secondary' variant='caption'>
+                {prescription.instruction}
+              </Typography>
               {index < appointment.prescriptions.length - 1 && <Divider />}
             </Box>
           ))

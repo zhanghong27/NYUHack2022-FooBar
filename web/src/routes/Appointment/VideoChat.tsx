@@ -48,7 +48,7 @@ const VideoChat = ({ isDoctor = false }: { isDoctor?: boolean }) => {
               variant='outlined'
               onClick={() => {
                 disconnect()
-                endAppointment({id: parseInt(id)})
+                endAppointment({ id: parseInt(id) })
                 setTimeout(() => {
                   navigate(`/appointment/details/${id}`)
                 }, 500)
