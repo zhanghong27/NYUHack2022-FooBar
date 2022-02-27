@@ -18,19 +18,24 @@ const PageRoutes = () => {
   return (
     <Routes>
       <Route path='/home' element={<Home />} />
-      <Route path='/prescriptions' />
-        <Route path='list' element={<PrescriptionsList />}>
-        <Route path='details/:id' element={<PrescriptionsDetails />}/>
+      <Route path='/prescriptions'>
+        <Route path='list' element={<PrescriptionsList />} />
+        <Route path='details/:id' element={<PrescriptionsDetails />} />
       </Route>
-      <Route path='/appointment' element={<PastAppointmentsList />}>
-        <Route path='new' element={<Questionnaire />}>
+      <Route path='/appointment'>
+        <Route path='new'>
           <Route path='list' element={<AppointmentsList />} />
           <Route path='confirm' element={<NewAppointmentConfirm />} />
+          <Route path='' element={<Questionnaire />} />
         </Route>
-        <Route path='upcoming' element={<UpcomingAppointments />}/>
-        <Route path='details/:id' element={<AppointmentDetails />}/>
+        <Route path='upcoming' element={<UpcomingAppointments />} />
+        <Route path='details/:id' element={<AppointmentDetails />} />
         <Route path='video/:id' element={<AppointmentVideoChat />} />
-        <Route path='video-doc/:id' element={<AppointmentVideoChat isDoctor />} />
+        <Route
+          path='video-doc/:id'
+          element={<AppointmentVideoChat isDoctor />}
+        />
+        <Route path='' element={<PastAppointmentsList />} />
       </Route>
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />

@@ -26,7 +26,7 @@ const Home = () => {
       <Grid container spacing={4}>
         <Grid item sm={1}></Grid>
         <Grid item sm={3} xs={12}>
-          <ImgCard img={doctor} to='/appointment/new/list'>
+          <ImgCard img={doctor} to='/appointment/new'>
             <BookIcon color='primary' sx={{ m: 1 }} />
             <Typography variant='button' fontSize={fontSize}>
               Make an Appointment
